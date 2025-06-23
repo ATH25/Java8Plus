@@ -17,6 +17,11 @@ interface Greeting2 {
  *
  * Instead of using an anonymous inner class, we directly assign
  * a lambda expression to the interface.
+ *
+ * NOTE:
+ * This works because Greeting2 is a Functional Interface — it has exactly one abstract method.
+ * The compiler can safely map the lambda expression to that method.
+ * If there were multiple abstract methods, this would not be allowed.
  */
 public class LambdaExample {
     public static void main(String[] args) {
