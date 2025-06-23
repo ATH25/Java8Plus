@@ -1,4 +1,4 @@
-package modernfeatures;
+package modernfeatures.lambda;
 
 /**
  * Interface: Greeting2
