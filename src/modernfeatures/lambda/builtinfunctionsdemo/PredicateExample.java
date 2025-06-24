@@ -14,6 +14,16 @@ import java.util.function.Predicate;
  */
 public class PredicateExample {
 
+    /**
+     * The main method demonstrates the usage of the built-in functional interface {@code Predicate<T>}.
+     * Several examples of {@code Predicate} functionality are covered, including:
+     * - Checking if a string is empty or not.
+     * - Checking if a number is even or odd.
+     * - Using predicate composition with {@code and()}, {@code or()}, and {@code negate()} methods.
+     * - Defining custom predicates for various logical checks (e.g., length of a string, starting pattern, etc.).
+     *
+     * @param args Command-line arguments passed to the program (not used in this example).
+     */
     public static void main(String[] args) {
         // Predicate that checks if a string is empty
         Predicate<String> isEmpty = message -> message.isEmpty();
@@ -35,5 +45,32 @@ public class PredicateExample {
         Predicate<Integer> isOdd = isEven.negate();
         int testNumber2 = 15;
         System.out.printf("Is %d odd? %b%n", testNumber2, isOdd.test(testNumber2));
+
+        /*Create a predicate that checks: Whether a given string is NOT empty*/
+        System.out.println("\n--- Create a predicate that checks: Whether a given string is NOT empty ---");
+        Predicate<String> isNotEmpty = isEmpty.negate();
+        System.out.printf("Is string NOT empty? %b%n", isNotEmpty.test(test1));
+        System.out.printf("Is string NOT empty? %b%n", isNotEmpty.test(test2));
+
+        Predicate<String> isNotEmpty2 = (s) -> !s.isEmpty();
+        System.out.printf("Is string NOT empty? %b%n", isNotEmpty2.test(test1));
+        System.out.printf("Is string NOT empty? %b%n", isNotEmpty2.test(test2));
+
+        /*Create a predicate that checks: if the length of a string is greater than 5*/
+        System.out.println("\n--- Create a predicate that checks: if the length of a string is greater than 5 ---");
+        Predicate<String> isLengthGreaterThan5 = s -> s.length() > 5;
+        System.out.printf("Is string greater than 5 characters? %b%n", isLengthGreaterThan5.test("Hello"));
+        System.out.printf("Is string greater than 5 characters? %b%n", isLengthGreaterThan5.test("Java"));
+
+        /*Create a predicate that checks: if the string starts with Java*/
+        System.out.println("\n--- Create a predicate that checks: if the string starts with Java ---");
+        Predicate<String> startsWithJava = s -> s.startsWith("Java");
+        System.out.printf("Does string start with 'Java'? %b%n", startsWithJava.test("Java"));
+        System.out.printf("Does string start with 'Java'? %b%n", startsWithJava.test("Hello Java"));
+
+        /*Chain predicates*/
+        Predicate<String> chainedPredicates = (isNotEmpty2.and(isLengthGreaterThan5)).or(startsWithJava);
+        System.out.printf("Is string NOT empty and greater than 5 characters OR does it start with 'Java'? %b%n", chainedPredicates.test("Hello"));
+        System.out.printf("Is string NOT empty and greater than 5 characters OR does it start with 'Java'? %b%n", chainedPredicates.test("Java"));
     }
 }
