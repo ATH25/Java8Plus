@@ -1,6 +1,7 @@
 package modernfeatures.lambda.builtinfunctionsdemo;
 
 import java.util.function.BiFunction;
+import java.util.function.Function;
 
 /**
  * Class: BiFunctionExample
@@ -30,8 +31,21 @@ public class BiFunctionExample {
         String message = formatMessage.apply("Alice", 95);
         System.out.println(message);
 
-        /*use andThen()*/
+        // Demonstrating the use of andThen() with BiFunction
+        // Step 1: BiFunction that multiplies two integers and returns an Integer
+        BiFunction<Integer, Integer, Integer> multiply = (x, y) -> x * y;
 
+        // Step 2: Function that converts the Integer result into a formatted String
+        // after will receive the output of the BiFunction (Integer) and return a String
+        Function<Integer, String> toResultString = result -> String.format("The result is: %d", result);
+
+        // Step 3: Chain them using andThen
+        // andThen returns a new BiFunction that first multiplies the inputs, then applies the Function
+        BiFunction<Integer, Integer, String> multiplyAndFormat = multiply.andThen(toResultString);
+
+        // Step 4: Use the combined BiFunction
+        String formatted = multiplyAndFormat.apply(7, 6);
+        System.out.println(formatted); // Output: The result is: 42
 
     }
 }
