@@ -59,7 +59,7 @@ public class StreamCountFindMatchExample {
                 .sorted()
                 .findFirst()
                 .ifPresentOrElse(
-                        name -> System.out.println("First: " + name),
+                        printName,
                         () -> System.out.println("No name found")
                 );
 
