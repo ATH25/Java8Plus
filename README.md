@@ -103,7 +103,7 @@ This repository contains sample Java programs that explore features introduced i
   | Type                                | Syntax                      | Example                                   |
   |------------------------------------- |-----------------------------|-------------------------------------------|
   | Static method reference              | `ClassName::staticMethod`   | `MethodReferenceExample::printUpper`      |
-  | Instance method of particular object | `object::instanceMethod`    | `helper::printLower`                      |
+  | Instance method of particular object | `object::instanceMethod`    | `obj::printLower`                      |
   | Instance method of object in stream  | `ClassName::instanceMethod` | `String::toUpperCase`                     |
   | Constructor reference                | `ClassName::new`            | `Person::new`                             |
 
