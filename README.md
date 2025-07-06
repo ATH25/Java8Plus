@@ -86,6 +86,21 @@ This repository contains sample Java programs that explore features introduced i
   Uses escape codes to colorize console text, helpful for highlighting output.
 
 
+- Optional  
+  Introduces a container object which may or may not contain a non-null value, eliminating the need to use `null` for missing results and reducing the risk of `NullPointerException`.
+  - Creating Optionals: `Optional.of(value)`, `Optional.ofNullable(value)`, and `Optional.empty()`
+  - Checking for presence: `isPresent()`, `isEmpty()`, and safe access patterns
+  - Getting values or defaults: `get()`, `orElse(default)`, `orElseGet(Supplier)`, `orElseThrow(Supplier)`
+  - Executing code if present: `ifPresent(Consumer)`
+  - Transforming and filtering: `map(Function)`, `flatMap(Function)`, `filter(Predicate)`
+  - Best practices: Prefer safe access (not `get()`), chain transformations, and use with streams for null-safe pipelines.
+  - Example exercises include:  
+    • Returning Optional from “lookup” methods  
+    • Using `orElseGet` to provide lazy defaults  
+    • Handling absence with `orElseThrow`  
+    • Chaining with `map`, `flatMap`, and `filter`  
+    • Using Optional with streams and custom helper methods
+
 - **Method References**  
   Provides a concise way to refer to methods or constructors, making code shorter and more readable than equivalent lambda expressions.
   - **Static method reference** (`ClassName::staticMethod`):  
@@ -109,6 +124,5 @@ This repository contains sample Java programs that explore features introduced i
 
 ## Upcoming Topics
 
-- Optional
 - Date and Time API
 - And more...
