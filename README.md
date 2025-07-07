@@ -101,6 +101,22 @@ This repository contains sample Java programs that explore features introduced i
     • Chaining with `map`, `flatMap`, and `filter`  
     • Using Optional with streams and custom helper methods
 
+
+- **Default and Static Methods in Interfaces**  
+  Prior to Java 8, interfaces could only declare abstract methods (no implementation).  
+  Java 8 introduced:
+  - **default methods:** Methods with a concrete implementation using the `default` keyword, enabling interface evolution without breaking existing code.
+  - **static methods:** Methods defined in interfaces that are called using the interface name, useful for utilities and shared logic.
+
+  Example:  
+  ```java
+  interface MyInterface {
+      default void greet() { System.out.println("Hello"); }
+      static void help() { System.out.println("Help method"); }
+  }
+  ```
+
+
 - **Method References**  
   Provides a concise way to refer to methods or constructors, making code shorter and more readable than equivalent lambda expressions.
   - **Static method reference** (`ClassName::staticMethod`):  
@@ -118,11 +134,29 @@ This repository contains sample Java programs that explore features introduced i
   | Type                                | Syntax                      | Example                                   |
   |------------------------------------- |-----------------------------|-------------------------------------------|
   | Static method reference              | `ClassName::staticMethod`   | `MethodReferenceExample::printUpper`      |
-  | Instance method of particular object | `object::instanceMethod`    | `obj::printLower`                      |
+  | Instance method of particular object | `object::instanceMethod`    | `obj::printLower`                         |
   | Instance method of object in stream  | `ClassName::instanceMethod` | `String::toUpperCase`                     |
   | Constructor reference                | `ClassName::new`            | `Person::new`                             |
 
+
+- **Date and Time API (`java.time`)**  
+  Java 8 introduced a modern, immutable, and thread-safe date/time API to replace the older, error-prone `Date` and `Calendar` classes.  
+  - Core classes:  
+    - `LocalDate` (date without time)
+    - `LocalTime` (time without date)
+    - `LocalDateTime` (date and time without timezone)
+    - `Instant` (an instantaneous point on the timeline, UTC)
+    - `ZonedDateTime` (date and time with timezone)
+    - `Period` (date-based amount of time)
+    - `Duration` (time-based amount of time)
+  - Formatting and parsing with `DateTimeFormatter`
+  - Immutability: All classes are immutable and thread-safe.
+  - Example exercises:
+    - Creating and manipulating dates/times (now, specific dates, plus/minus)
+    - Formatting and parsing dates
+    - Calculating differences using `Period` and `Duration`
+    - Handling time zones
+
 ## Upcoming Topics
 
-- Date and Time API
 - And more...
