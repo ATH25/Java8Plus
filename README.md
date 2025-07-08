@@ -8,7 +8,7 @@ You’ll find:
 - Explanations, “gotchas,” and Java best practices
 - Incremental learning—new features and exercises added as you progress
 
-## Topics Covered
+## Topics List
 
 - Lambda Expressions
   - Streams API
@@ -19,13 +19,21 @@ You’ll find:
 - Method References
 - Optional
 - Date and Time API
+- Collectors (Basics and Advanced)
+  - Basics: toList(), toSet(), toMap(), joining(), groupingBy(), partitioningBy(), summarizing collectors
+  - Advanced: mapping() for downstream value transformation, collector composition, grouping with mapping
+- CompletableFuture and Modern Concurrency
+  - Asynchronous task execution: supplyAsync(), runAsync()
+  - Chaining: thenApply(), thenAccept()
+  - Combining: thenCombine(), allOf(), anyOf()
+  - Exception handling: exceptionally(), handle(), whenComplete()
 - And more...
 
 # Java8Plus
 
 This repository contains sample Java programs that explore features introduced in Java 8 and beyond.
 
-## Topics Covered (So Far)
+## Topics Explained
 
 - Anonymous Inner Classes  
   Enables creation of one-off class implementations without separate class declarations, often used to implement interfaces in place.
@@ -139,6 +147,7 @@ This repository contains sample Java programs that explore features introduced i
   | Constructor reference                | `ClassName::new`            | `Person::new`                             |
 
 
+
 - **Date and Time API (`java.time`)**  
   Java 8 introduced a modern, immutable, and thread-safe date/time API to replace the older, error-prone `Date` and `Calendar` classes.  
   - Core classes:  
@@ -156,6 +165,39 @@ This repository contains sample Java programs that explore features introduced i
     - Formatting and parsing dates
     - Calculating differences using `Period` and `Duration`
     - Handling time zones
+
+- **Collectors (Basics and Advanced)**  
+  Demonstrates the use of the `Collectors` utility class for processing streams in modern Java.  
+  - **Basics:**  
+    - `toList()`, `toSet()`, `toMap()`: Collect elements into standard Java collections.
+    - `joining()`: Concatenate stream elements into a single String.
+    - `groupingBy()`: Group elements by a property or function, producing a map of lists.
+    - `partitioningBy()`: Split elements into two groups based on a predicate.
+    - `summarizingInt()`: Collect summary statistics (count, min, max, sum, average) of stream elements.
+  - **Advanced:**  
+    - `mapping()`: Apply a transformation to each element before collecting them, especially useful as a downstream collector (e.g., grouping names by first letter and collecting the lengths of names in each group).
+    - Collector composition: Combining collectors for more complex grouping and summarization (e.g., grouping and mapping, grouping and counting).
+    - Practical grouping by value transformation: Demonstrates how to use `mapping()` with `groupingBy()` to transform and collect data, with clear printouts of results.
+  - Example exercises include:  
+    • Grouping and mapping values in a stream  
+    • Printing detailed breakdowns of grouped values  
+    • Using different downstream collectors to change the result type (List, Set, summary)
+
+- **CompletableFuture and Modern Concurrency**  
+  Introduces Java 8’s CompletableFuture API for writing non-blocking, asynchronous, and parallel code.  
+  - Creating async tasks: `supplyAsync()` for computations with results, `runAsync()` for tasks with no result.
+  - Chaining operations: Using `thenApply()` and `thenAccept()` to process or consume results as they become available.
+  - Combining multiple async results: `thenCombine()` to merge results of two computations; overview of `allOf()` and `anyOf()` for aggregating many tasks.
+  - Exception handling and result inspection:  
+    - `exceptionally()` for handling errors and supplying fallback values.
+    - `whenComplete()` for post-completion side effects, similar to a finally block.
+    - `handle()` for examining both normal and exceptional outcomes and providing alternate results.
+  - Example exercises include:  
+    • Running and chaining async computations  
+    • Combining multiple futures  
+    • Demonstrating practical exception handling and result transformation  
+    • Logging and cleanup actions after task completion
+
 
 ## Upcoming Topics
 
