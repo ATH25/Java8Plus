@@ -27,6 +27,12 @@ You’ll find:
   - Chaining: thenApply(), thenAccept()
   - Combining: thenCombine(), allOf(), anyOf()
   - Exception handling: exceptionally(), handle(), whenComplete()
+- Try-With-Resources (Java 7)
+  - Automatic resource management for Closable/AutoCloseable objects
+- Strings in switch (Java 7)
+  - Use switch statements with String values for concise branching
+- Multi-Catch Exception Handling (Java 7)
+  - Catch multiple exception types in a single catch block for concise error handling
 - And more...
 
 # Java8Plus
@@ -198,6 +204,23 @@ This repository contains sample Java programs that explore features introduced i
     • Demonstrating practical exception handling and result transformation  
     • Logging and cleanup actions after task completion
 
+- Try-With-Resources (Java 7)  
+  Introduces automatic resource management for objects like files, sockets, or database connections that implement AutoCloseable.  
+  - Resources declared in the try(...) statement are automatically closed at the end of the block, even if an exception occurs.
+  - Simplifies code and prevents resource leaks by eliminating the need for explicit finally blocks.
+  - Example exercises: reading a file using BufferedReader, safely managing multiple resources in one try statement.
+  
+- Strings in switch (Java 7)  
+  Allows using String values in switch statements, greatly improving readability when branching on string commands or data.
+  - Enables direct comparison of a String variable/expression against constant case labels.
+  - Matching is case-sensitive and uses String.equals() internally.
+  - Example exercises: building command interpreters or data mappers with concise, readable code.
+
+- Multi-Catch Exception Handling (Java 7)  
+  Lets you handle two or more exception types in a single catch block using the `|` (pipe) separator.
+  - Reduces code duplication when multiple exceptions require the same handling logic.
+  - Improves readability and maintainability.
+  - Example exercises: Simulating operations that throw different checked exceptions and handling them together.
 
 ## Upcoming Topics
 
