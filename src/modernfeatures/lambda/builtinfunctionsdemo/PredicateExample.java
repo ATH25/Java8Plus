@@ -3,26 +3,23 @@ package modernfeatures.lambda.builtinfunctionsdemo;
 import java.util.function.Predicate;
 
 /**
- * Class: PredicateExample
- * ------------------------
- * This class demonstrates:
- * 1. The built-in functional interface {@code Predicate<T>}
- *
- * - {@code Predicate<T>} represents a function that takes an input of type {@code T} and returns a boolean.
- * - The method to implement is {@code test(T t)}.
- * - It is commonly used for conditional checks and filtering.
+ * Demonstrates the use of {@link Predicate} and its common operations.
+ * <p>
+ * Features covered:
+ * <ul>
+ *   <li>Checking if a string is empty or not</li>
+ *   <li>Determining if a number is even or odd</li>
+ *   <li>Using {@code negate()} for predicate negation</li>
+ *   <li>Composing predicates with {@code and()}, {@code or()}</li>
+ *   <li>Defining custom predicates for string length and patterns</li>
+ * </ul>
  */
 public class PredicateExample {
 
     /**
-     * The main method demonstrates the usage of the built-in functional interface {@code Predicate<T>}.
-     * Several examples of {@code Predicate} functionality are covered, including:
-     * - Checking if a string is empty or not.
-     * - Checking if a number is even or odd.
-     * - Using predicate composition with {@code and()}, {@code or()}, and {@code negate()} methods.
-     * - Defining custom predicates for various logical checks (e.g., length of a string, starting pattern, etc.).
+     * Demonstrates multiple {@link Predicate} use cases including testing, negation, and composition.
      *
-     * @param args Command-line arguments passed to the program (not used in this example).
+     * @param args Command-line arguments (not used)
      */
     public static void main(String[] args) {
         // Predicate that checks if a string is empty

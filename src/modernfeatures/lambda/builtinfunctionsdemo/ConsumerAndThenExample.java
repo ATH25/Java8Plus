@@ -3,14 +3,14 @@ package modernfeatures.lambda.builtinfunctionsdemo;
 import java.util.function.Consumer;
 
 /**
- * Class: ConsumerAndThenExample
- * ------------------------------
- * This class demonstrates:
- * 1. The built-in functional interface {@code Consumer<T>}
- * 2. The usage of the {@code andThen()} method to chain multiple {@code Consumer}s.
- *
- * - {@code Consumer<T>} represents an operation that accepts a single input argument and returns no result.
- * - The {@code andThen()} method allows you to compose {@code Consumer}s sequentially.
+ * Demonstrates the use of {@link Consumer} and its chaining with {@code andThen()}.
+ * <p>
+ * Features covered:
+ * <ul>
+ *   <li>Creating {@code Consumer<T>} instances to process strings</li>
+ *   <li>Using {@code andThen()} to chain multiple {@code Consumer} operations</li>
+ *   <li>Examples of independent and combined {@code Consumer} execution</li>
+ * </ul>
  */
 public class ConsumerAndThenExample {
 

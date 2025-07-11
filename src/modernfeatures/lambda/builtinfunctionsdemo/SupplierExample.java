@@ -4,7 +4,7 @@ import java.util.function.Supplier;
 import java.time.LocalDateTime;
 
 /**
- * Demonstrates the built-in functional interface {@code Supplier<T>}.
+ * Demonstrates the use of the built-in functional interface {@code Supplier<T>}.
  * <p>
  * <ul>
  *   <li>{@code Supplier<T>} represents a supplier of results.</li>

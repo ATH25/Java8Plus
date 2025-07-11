@@ -4,14 +4,14 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 
 /**
- * Class: BiFunctionExample
- * -------------------------
- * This class demonstrates:
- * 1. The built-in functional interface {@code BiFunction<T, U, R>}
- *
- * - {@code BiFunction<T, U, R>} represents a function that takes two inputs of type T and U,
- *   and returns a result of type R.
- * - The method to implement is {@code apply(T t, U u)}.
+ * Demonstrates the use of {@link BiFunction} and its chaining with {@link Function}.
+ * <p>
+ * Features covered:
+ * <ul>
+ *   <li>Creating a {@code BiFunction<T, U, R>} that takes two inputs and returns a result</li>
+ *   <li>Examples of adding integers, concatenating strings, and formatting messages</li>
+ *   <li>Using {@code andThen()} to chain a BiFunction with a Function</li>
+ * </ul>
  */
 public class BiFunctionExample {
 
