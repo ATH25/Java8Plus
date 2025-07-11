@@ -1,17 +1,8 @@
 package modernfeatures.java7;
 
-/**
- * Demonstrates the use of the Fork/Join framework to sum an array of integers in parallel.
- * The array is recursively divided into smaller tasks that are processed concurrently,
- * improving performance on multi-core processors.
- */
 import java.util.concurrent.RecursiveTask;
 import java.util.concurrent.ForkJoinPool;
 
-/**
- * A RecursiveTask that sums a portion of an integer array.
- * Extends RecursiveTask<Integer> to leverage the Fork/Join framework's support for tasks that return results.
- */
 class SumTask extends RecursiveTask<Integer> {
     private final int[] arr;
     private final int start, end;
@@ -63,15 +54,20 @@ class SumTask extends RecursiveTask<Integer> {
     }
 }
 
+/**
+ * Demonstrates the use of the Fork/Join framework to sum an array of integers in parallel.
+ * The array is recursively divided into smaller tasks that are processed concurrently,
+ * improving performance on multi-core processors.
+ */
 public class ForkJoinSumDemo {
     public static void main(String[] args) {
         // Create an array of numbers to sum
         int[] numbers = {2, 4, 6, 8, 10, 12, 14, 16, 18, 20};
-        // Create a ForkJoinPool to manage worker threads
-        ForkJoinPool pool = new ForkJoinPool();
-        // Invoke the SumTask on the pool, which recursively computes the sum
-        int total = pool.invoke(new SumTask(numbers, 0, numbers.length));
-        // Print the final sum result
-        System.out.println("Sum is: " + total); // Output: 110
+        // Create a ForkJoinPool to manage worker threads and invoke the SumTask
+        try (ForkJoinPool pool = new ForkJoinPool()) {
+            int total = pool.invoke(new SumTask(numbers, 0, numbers.length));
+            // Print the final sum result
+            System.out.println("Sum is: " + total); // Output: 110
+        }
     }
 }
