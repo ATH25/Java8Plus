@@ -35,6 +35,8 @@ You’ll find:
   - Catch multiple exception types in a single catch block for concise error handling
 - NIO.2 File API (Java 7)
   - Modern file and directory handling with Path and Files classes
+- Fork/Join Framework (Java 7)
+  - Parallel divide-and-conquer with RecursiveTask, RecursiveAction, and ForkJoinPool
 - And more...
 
 # Java8Plus
@@ -224,11 +226,23 @@ This repository contains sample Java programs that explore features introduced i
   - Improves readability and maintainability.
   - Example exercises: Simulating operations that throw different checked exceptions and handling them together.
 
+  
 - NIO.2 File API (Java 7)  
   Introduces the java.nio.file package, replacing most legacy java.io.File use cases with a safer, more flexible, and feature-rich API.
   - Core classes: Path (represents a file or directory location), Files (utility class for common file operations).
   - Supports reading/writing files, copying, moving, deleting, checking attributes, and scalable directory traversal.
   - Example exercises: creating, reading, and deleting files using Path and Files.
+
+- Fork/Join Framework (Java 7)  
+  Enables parallel processing of divide-and-conquer problems by recursively splitting tasks into smaller subtasks that are processed in parallel and then combined.
+  - Key classes:
+    - RecursiveTask<V>: For tasks that return results (implement compute()).
+    - RecursiveAction: For tasks that don’t return results.
+    - ForkJoinPool: Special thread pool for executing Fork/Join tasks.
+  - Example exercises:
+    • Summing an array in parallel by splitting, forking, and joining subtasks.
+    • Demonstrating how fork() schedules a task for parallel execution and join() waits for results.
+    • Shows thread pool parallelism and safe, efficient result aggregation.
 
 ## Upcoming Topics
 
