@@ -4,14 +4,19 @@ import java.util.function.Supplier;
 import java.time.LocalDateTime;
 
 /**
- * Class: SupplierExample
- * -----------------------
- * This class demonstrates:
- * 1. The built-in functional interface Supplier<T>
- *
- * - Supplier<T> represents a supplier of results.
- * - It has no input argument and returns a value of type T.
- * - The method to implement is get().
+ * Demonstrates the built-in functional interface {@code Supplier<T>}.
+ * <p>
+ * <ul>
+ *   <li>{@code Supplier<T>} represents a supplier of results.</li>
+ *   <li>No input argument; returns a value of type {@code T}.</li>
+ *   <li>Key method to implement: {@code get()}.</li>
+ * </ul>
+ * <p>
+ * <b>Example usage:</b>
+ * <pre>
+ *   Supplier&lt;String&gt; s = () -> "Hello";
+ *   System.out.println(s.get());
+ * </pre>
  */
 public class SupplierExample {
 

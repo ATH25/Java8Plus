@@ -6,11 +6,11 @@ import java.util.function.Consumer;
  * Class: ConsumerAndThenExample
  * ------------------------------
  * This class demonstrates:
- * 1. The built-in functional interface Consumer<T>
- * 2. The usage of the andThen() method to chain multiple Consumers.
+ * 1. The built-in functional interface {@code Consumer<T>}
+ * 2. The usage of the {@code andThen()} method to chain multiple {@code Consumer}s.
  *
- * - Consumer<T> represents an operation that accepts a single input argument and returns no result.
- * - The andThen() method allows you to compose Consumers sequentially.
+ * - {@code Consumer<T>} represents an operation that accepts a single input argument and returns no result.
+ * - The {@code andThen()} method allows you to compose {@code Consumer}s sequentially.
  */
 public class ConsumerAndThenExample {
 

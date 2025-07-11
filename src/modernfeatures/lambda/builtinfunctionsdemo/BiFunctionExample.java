@@ -7,11 +7,11 @@ import java.util.function.Function;
  * Class: BiFunctionExample
  * -------------------------
  * This class demonstrates:
- * 1. The built-in functional interface BiFunction<T, U, R>
+ * 1. The built-in functional interface {@code BiFunction<T, U, R>}
  *
- * - BiFunction<T, U, R> represents a function that takes two inputs of type T and U,
+ * - {@code BiFunction<T, U, R>} represents a function that takes two inputs of type T and U,
  *   and returns a result of type R.
- * - The method to implement is apply(T t, U u).
+ * - The method to implement is {@code apply(T t, U u)}.
  */
 public class BiFunctionExample {
 

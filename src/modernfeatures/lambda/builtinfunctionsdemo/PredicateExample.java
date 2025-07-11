@@ -6,10 +6,10 @@ import java.util.function.Predicate;
  * Class: PredicateExample
  * ------------------------
  * This class demonstrates:
- * 1. The built-in functional interface Predicate<T>
+ * 1. The built-in functional interface {@code Predicate<T>}
  *
- * - Predicate<T> represents a function that takes an input of type T and returns a boolean.
- * - The method to implement is test(T t).
+ * - {@code Predicate<T>} represents a function that takes an input of type {@code T} and returns a boolean.
+ * - The method to implement is {@code test(T t)}.
  * - It is commonly used for conditional checks and filtering.
  */
 public class PredicateExample {

@@ -4,9 +4,38 @@ import java.util.concurrent.CompletableFuture;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Demonstrates basic usage of CompletableFuture for asynchronous programming in Java 8+.
+ * <p>Demonstrates basic usage of {@code CompletableFuture} for asynchronous programming in Java 8+.</p>
+ * <ul>
+ *   <li>Run asynchronous tasks that return a result using {@code CompletableFuture.supplyAsync()}.</li>
+ *   <li>Run asynchronous tasks without a result using {@code CompletableFuture.runAsync()}.</li>
+ *   <li>Block and wait for asynchronous computations to complete using {@code get()}.</li>
+ * </ul>
+ * <p>Example usage:</p>
+ * <pre>
+ * {@code
+ * CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+ *     // Long-running computation
+ *     Thread.sleep(10000);
+ *     return "Hello from CompletableFuture!";
+ * });
+ * String result = future.get();
+ * System.out.println("Result: " + result);
+ * }
+ * </pre>
  */
 public class CompletableFutureBasicsExample {
+    /**
+     * <p>Main method demonstrating basic {@code CompletableFuture} usage.</p>
+     * <ul>
+     *   <li>Starts an asynchronous task that returns a result.</li>
+     *   <li>Starts an asynchronous task without a result.</li>
+     *   <li>Blocks the main thread to wait for completion of both tasks.</li>
+     * </ul>
+     *
+     * @param args command line arguments (not used)
+     * @throws ExecutionException if the computation threw an exception
+     * @throws InterruptedException if the current thread was interrupted while waiting
+     */
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         // Example 1: Run a task asynchronously and get the result
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {

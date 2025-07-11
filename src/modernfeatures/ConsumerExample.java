@@ -3,9 +3,9 @@ package modernfeatures;
 import java.util.function.Consumer;
 
 /**
- * Demonstrates the built-in Consumer<T> functional interface.
+ * Demonstrates the built-in {@code Consumer<T>} functional interface.
  *
- * Consumer<T> takes a single input and returns nothing (void).
+ * {@code Consumer<T>} takes a single input and returns nothing (void).
  * It is commonly used for performing actions like printing, logging, etc.
  */
 public class ConsumerExample {
