@@ -1,3 +1,5 @@
+package modernfeatures;
+
 public class ColorExample {
     public static void main(String[] args) {
         // ANSI escape code for red text
