@@ -33,6 +33,8 @@ You’ll find:
   - Use switch statements with String values for concise branching
 - Multi-Catch Exception Handling (Java 7)
   - Catch multiple exception types in a single catch block for concise error handling
+- NIO.2 File API (Java 7)
+  - Modern file and directory handling with Path and Files classes
 - And more...
 
 # Java8Plus
@@ -221,6 +223,12 @@ This repository contains sample Java programs that explore features introduced i
   - Reduces code duplication when multiple exceptions require the same handling logic.
   - Improves readability and maintainability.
   - Example exercises: Simulating operations that throw different checked exceptions and handling them together.
+
+- NIO.2 File API (Java 7)  
+  Introduces the java.nio.file package, replacing most legacy java.io.File use cases with a safer, more flexible, and feature-rich API.
+  - Core classes: Path (represents a file or directory location), Files (utility class for common file operations).
+  - Supports reading/writing files, copying, moving, deleting, checking attributes, and scalable directory traversal.
+  - Example exercises: creating, reading, and deleting files using Path and Files.
 
 ## Upcoming Topics
 
