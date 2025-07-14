@@ -37,7 +37,12 @@ You’ll find:
   - Modern file and directory handling with Path and Files classes
 - Fork/Join Framework (Java 7)
   - Parallel divide-and-conquer with RecursiveTask, RecursiveAction, and ForkJoinPool
-- And more...
+- Collection Factory Methods (Java 9)
+  - Immutable lists, sets, and maps via List.of(), Set.of(), Map.of()
+- JShell (Java 9 REPL)
+  - Interactive Read-Eval-Print Loop for rapid prototyping and exploration
+  - Stream API Improvements (Java 9)
+    - takeWhile(), dropWhile(), ofNullable(), and more
 
 # Java8Plus
 
@@ -243,6 +248,24 @@ This repository contains sample Java programs that explore features introduced i
     • Summing an array in parallel by splitting, forking, and joining subtasks.
     • Demonstrating how fork() schedules a task for parallel execution and join() waits for results.
     • Shows thread pool parallelism and safe, efficient result aggregation.
+
+- Collection Factory Methods (Java 9)  
+  Introduces static factory methods {@code List.of()}, {@code Set.of()}, and {@code Map.of()} for quick creation of immutable collections.
+  - Collections created with these methods are unmodifiable and throw exceptions on modification attempts.
+  - Example exercises: creating and using read-only lists, sets, and maps for concise, safer code.
+
+-- JShell (Java 9 REPL)  
+  JShell is Java’s Read-Eval-Print Loop tool for interactive programming, prototyping, and API exploration.
+  - Allows multi-line code, instant feedback, and easy testing of statements, methods, and expressions.
+  - Supports variable declarations, class and method definitions, loops, and conditionals.
+  - Example exercises: testing code snippets, exploring new Java features, and debugging small algorithms interactively.
+
+- Stream API Improvements (Java 9)  
+  Java 9 adds several enhancements to the Stream API, making functional-style processing of collections more expressive:
+  - {@code takeWhile(Predicate)}: Collects elements from a stream while a condition holds, stopping at the first non-match.
+  - {@code dropWhile(Predicate)}: Skips leading elements while a condition holds, then returns the rest.
+  - {@code ofNullable(T)}: Safely creates a stream from a potentially-null value, avoiding NullPointerExceptions.
+  - Example exercises: splitting sorted streams with {@code takeWhile}, processing stream “tails” with {@code dropWhile}, safely handling nulls in stream pipelines.
 
 ## Upcoming Topics
 
