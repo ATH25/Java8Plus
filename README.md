@@ -43,6 +43,8 @@ You’ll find:
   - Interactive Read-Eval-Print Loop for rapid prototyping and exploration
   - Stream API Improvements (Java 9)
     - takeWhile(), dropWhile(), ofNullable(), and more
+  - Private Interface Methods (Java 9)
+    - Private and private static methods for code reuse within interface default/static methods
 
 # Java8Plus
 
@@ -260,12 +262,20 @@ This repository contains sample Java programs that explore features introduced i
   - Supports variable declarations, class and method definitions, loops, and conditionals.
   - Example exercises: testing code snippets, exploring new Java features, and debugging small algorithms interactively.
 
+
 - Stream API Improvements (Java 9)  
   Java 9 adds several enhancements to the Stream API, making functional-style processing of collections more expressive:
   - {@code takeWhile(Predicate)}: Collects elements from a stream while a condition holds, stopping at the first non-match.
   - {@code dropWhile(Predicate)}: Skips leading elements while a condition holds, then returns the rest.
   - {@code ofNullable(T)}: Safely creates a stream from a potentially-null value, avoiding NullPointerExceptions.
   - Example exercises: splitting sorted streams with {@code takeWhile}, processing stream “tails” with {@code dropWhile}, safely handling nulls in stream pipelines.
+
+- Private Interface Methods (Java 9)  
+  Java 9 allows interfaces to declare private and private static methods. These methods:
+  - Enable code sharing and organization within interface default and static methods.
+  - Are not inherited by implementing classes or accessible from outside the interface.
+  - Must be used only by other methods within the same interface.
+  - Example exercises: factoring out common code in default methods, demonstrating encapsulation of helper logic within interfaces.
 
 ## Upcoming Topics
 
