@@ -47,6 +47,8 @@ You’ll find:
   - Private and private static methods for code reuse within interface default/static methods
 - JPMS (Java Platform Module System, Java 9 Modules)
   - Explicit module boundaries, requires/exports in module-info.java, strong encapsulation and dependency management
+- Local Variable Type Inference (Java 10)
+  - Use of 'var' for local variable declarations with type inference
 
 # Java8Plus
 
@@ -279,12 +281,20 @@ This repository contains sample Java programs that explore features introduced i
   - Must be used only by other methods within the same interface.
   - Example exercises: factoring out common code in default methods, demonstrating encapsulation of helper logic within interfaces.
 
-- JPMS (Java Platform Module System, Java 9 Modules)  
+-- JPMS (Java Platform Module System, Java 9 Modules)  
   Java 9 introduced a module system for strong encapsulation and explicit dependency management.
   - Each module includes a `module-info.java` file that declares its name, dependencies (`requires`), and public packages (`exports`).
   - Only packages exported in `module-info.java` are accessible to other modules, even for public classes.
   - Modules prevent accidental usage of internal APIs and allow the JVM to check dependencies at compile and run time.
   - Example exercises: building a two-module project (`greetings` and `app`), using `requires` and `exports` for inter-module communication.
+
+- Local Variable Type Inference (Java 10)  
+  Java 10 introduced the {@code var} keyword for local variables, enabling type inference by the compiler:
+  - {@code var} can be used only for local variables inside methods, constructors, or code blocks.
+  - The type is inferred at compile time based on the initializer (the right-hand side).
+  - Improves code readability and reduces boilerplate, especially for complex generic types.
+  - Cannot be used for fields, method parameters, or return types.
+  - Example exercises: replacing explicit type declarations with {@code var}, demonstrating inferred types for collections, maps, and loop variables.
 
 ## Upcoming Topics
 
