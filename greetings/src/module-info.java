@@ -1,0 +1,3 @@
+module greetings {
+    exports greetings;
+}

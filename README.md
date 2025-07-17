@@ -41,10 +41,12 @@ You’ll find:
   - Immutable lists, sets, and maps via List.of(), Set.of(), Map.of()
 - JShell (Java 9 REPL)
   - Interactive Read-Eval-Print Loop for rapid prototyping and exploration
-  - Stream API Improvements (Java 9)
-    - takeWhile(), dropWhile(), ofNullable(), and more
-  - Private Interface Methods (Java 9)
-    - Private and private static methods for code reuse within interface default/static methods
+- Stream API Improvements (Java 9)
+  - takeWhile(), dropWhile(), ofNullable(), and more
+- Private Interface Methods (Java 9)
+  - Private and private static methods for code reuse within interface default/static methods
+- JPMS (Java Platform Module System, Java 9 Modules)
+  - Explicit module boundaries, requires/exports in module-info.java, strong encapsulation and dependency management
 
 # Java8Plus
 
@@ -276,6 +278,13 @@ This repository contains sample Java programs that explore features introduced i
   - Are not inherited by implementing classes or accessible from outside the interface.
   - Must be used only by other methods within the same interface.
   - Example exercises: factoring out common code in default methods, demonstrating encapsulation of helper logic within interfaces.
+
+- JPMS (Java Platform Module System, Java 9 Modules)  
+  Java 9 introduced a module system for strong encapsulation and explicit dependency management.
+  - Each module includes a `module-info.java` file that declares its name, dependencies (`requires`), and public packages (`exports`).
+  - Only packages exported in `module-info.java` are accessible to other modules, even for public classes.
+  - Modules prevent accidental usage of internal APIs and allow the JVM to check dependencies at compile and run time.
+  - Example exercises: building a two-module project (`greetings` and `app`), using `requires` and `exports` for inter-module communication.
 
 ## Upcoming Topics
 
