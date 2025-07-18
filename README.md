@@ -49,12 +49,13 @@ You’ll find:
   - Explicit module boundaries, requires/exports in module-info.java, strong encapsulation and dependency management
 - Local Variable Type Inference (Java 10)
   - Use of 'var' for local variable declarations with type inference
+- String API Enhancements (Java 11)
+  - isBlank(), lines(), strip(), repeat(), and related improvements
 
 # Java8Plus
 
 This repository contains sample Java programs that explore features introduced in Java 8 and beyond.
 
-## Topics Explained
 
 - Anonymous Inner Classes  
   Enables creation of one-off class implementations without separate class declarations, often used to implement interfaces in place.
@@ -219,6 +220,7 @@ This repository contains sample Java programs that explore features introduced i
     • Demonstrating practical exception handling and result transformation  
     • Logging and cleanup actions after task completion
 
+
 - Try-With-Resources (Java 7)  
   Introduces automatic resource management for objects like files, sockets, or database connections that implement AutoCloseable.  
   - Resources declared in the try(...) statement are automatically closed at the end of the block, even if an exception occurs.
@@ -237,7 +239,6 @@ This repository contains sample Java programs that explore features introduced i
   - Improves readability and maintainability.
   - Example exercises: Simulating operations that throw different checked exceptions and handling them together.
 
-  
 - NIO.2 File API (Java 7)  
   Introduces the java.nio.file package, replacing most legacy java.io.File use cases with a safer, more flexible, and feature-rich API.
   - Core classes: Path (represents a file or directory location), Files (utility class for common file operations).
@@ -255,6 +256,7 @@ This repository contains sample Java programs that explore features introduced i
     • Demonstrating how fork() schedules a task for parallel execution and join() waits for results.
     • Shows thread pool parallelism and safe, efficient result aggregation.
 
+
 - Collection Factory Methods (Java 9)  
   Introduces static factory methods {@code List.of()}, {@code Set.of()}, and {@code Map.of()} for quick creation of immutable collections.
   - Collections created with these methods are unmodifiable and throw exceptions on modification attempts.
@@ -265,7 +267,6 @@ This repository contains sample Java programs that explore features introduced i
   - Allows multi-line code, instant feedback, and easy testing of statements, methods, and expressions.
   - Supports variable declarations, class and method definitions, loops, and conditionals.
   - Example exercises: testing code snippets, exploring new Java features, and debugging small algorithms interactively.
-
 
 - Stream API Improvements (Java 9)  
   Java 9 adds several enhancements to the Stream API, making functional-style processing of collections more expressive:
@@ -281,12 +282,13 @@ This repository contains sample Java programs that explore features introduced i
   - Must be used only by other methods within the same interface.
   - Example exercises: factoring out common code in default methods, demonstrating encapsulation of helper logic within interfaces.
 
--- JPMS (Java Platform Module System, Java 9 Modules)  
+- JPMS (Java Platform Module System, Java 9 Modules)  
   Java 9 introduced a module system for strong encapsulation and explicit dependency management.
   - Each module includes a `module-info.java` file that declares its name, dependencies (`requires`), and public packages (`exports`).
   - Only packages exported in `module-info.java` are accessible to other modules, even for public classes.
   - Modules prevent accidental usage of internal APIs and allow the JVM to check dependencies at compile and run time.
   - Example exercises: building a two-module project (`greetings` and `app`), using `requires` and `exports` for inter-module communication.
+
 
 - Local Variable Type Inference (Java 10)  
   Java 10 introduced the {@code var} keyword for local variables, enabling type inference by the compiler:
@@ -296,6 +298,14 @@ This repository contains sample Java programs that explore features introduced i
   - Cannot be used for fields, method parameters, or return types.
   - Example exercises: replacing explicit type declarations with {@code var}, demonstrating inferred types for collections, maps, and loop variables.
 
+
+- String API Enhancements (Java 11)  
+  Java 11 introduced several new and improved String methods for more powerful text processing:
+  - {@code isBlank()}: Returns true if the string is empty or contains only whitespace.
+  - {@code lines()}: Splits the string into a stream of lines, handling all line terminators.
+  - {@code strip()}, {@code stripLeading()}, {@code stripTrailing()}: Remove whitespace (Unicode-aware) from both ends, the start, or the end of the string.
+  - {@code repeat(int)}: Returns a new string consisting of the original repeated the specified number of times.
+  - Example exercises: Checking for blank strings, splitting into lines, trimming with Unicode support, and repeating text for formatting or testing.
 ## Upcoming Topics
 
 - And more...
