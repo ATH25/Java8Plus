@@ -53,6 +53,10 @@ You’ll find:
   - isBlank(), lines(), strip(), repeat(), and related improvements
 - HTTP Client API (Java 11)
   - Modern synchronous and asynchronous HTTP requests with java.net.http.HttpClient
+- var in Lambda Parameters (Java 11)
+  - Allows use of 'var' and annotations in lambda parameter lists
+- Text Blocks (Java 13/15+)
+  - Multi-line string literals using triple double-quotes (""")
 
 # Java8Plus
 
@@ -319,6 +323,22 @@ This repository contains sample Java programs that explore features introduced i
     • Performing GET requests synchronously and asynchronously  
     • Using lambda callbacks to process HTTP responses  
     • Demonstrating why blocking (e.g., {@code .join()}) is sometimes needed in console programs to ensure asynchronous operations complete.
+
+- var in Lambda Parameters (Java 11)  
+  Java 11 allows the use of the {@code var} keyword in lambda parameter lists, enabling type inference and support for annotations:
+  - Lets you annotate lambda parameters or use modifiers such as {@code final} alongside {@code var}.
+  - All parameters in a lambda must use {@code var} if one does; you cannot mix explicit types and {@code var}.
+  - This is primarily for enhanced readability, documentation, or static analysis, especially in cases where parameter annotations are needed.
+  - Example exercises: using {@code var}, {@code final var}, and custom annotations on lambda parameters, and understanding the effect of annotations in this context.
+
+
+- Text Blocks (Java 13/15+)  
+  Java introduced text blocks as a feature for writing multi-line string literals using triple double-quotes ({@code """}):
+  - Makes it easier to write, read, and maintain multi-line text such as JSON, SQL, HTML, or formatted documentation.
+  - Removes the need for excessive escaping and awkward string concatenation.
+  - Preserves line breaks, indentation, and allows embedded quotes without special escaping.
+  - Example exercises: formatting JSON, SQL, and HTML snippets; demonstrating preservation of whitespace and line structure; comparing classic string literals with text blocks.
+
 ## Upcoming Topics
 
 - And more...
