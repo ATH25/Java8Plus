@@ -39,7 +39,7 @@ public class HttpClientDemo {
      * @param args command-line arguments (not used)
      * @throws Exception if an error occurs during HTTP operations
      */
-    public static void main(String[] args) throws Exception, InterruptedException {
+    public static void main(String[] args) throws Exception {
         HttpClient client = HttpClient.newBuilder()
                 .connectTimeout(Duration.ofSeconds(10))
                 .build();
