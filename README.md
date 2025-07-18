@@ -51,11 +51,14 @@ You’ll find:
   - Use of 'var' for local variable declarations with type inference
 - String API Enhancements (Java 11)
   - isBlank(), lines(), strip(), repeat(), and related improvements
+- HTTP Client API (Java 11)
+  - Modern synchronous and asynchronous HTTP requests with java.net.http.HttpClient
 
 # Java8Plus
 
 This repository contains sample Java programs that explore features introduced in Java 8 and beyond.
 
+## Details 
 
 - Anonymous Inner Classes  
   Enables creation of one-off class implementations without separate class declarations, often used to implement interfaces in place.
@@ -262,7 +265,7 @@ This repository contains sample Java programs that explore features introduced i
   - Collections created with these methods are unmodifiable and throw exceptions on modification attempts.
   - Example exercises: creating and using read-only lists, sets, and maps for concise, safer code.
 
--- JShell (Java 9 REPL)  
+- JShell (Java 9 REPL)  
   JShell is Java’s Read-Eval-Print Loop tool for interactive programming, prototyping, and API exploration.
   - Allows multi-line code, instant feedback, and easy testing of statements, methods, and expressions.
   - Supports variable declarations, class and method definitions, loops, and conditionals.
@@ -306,6 +309,16 @@ This repository contains sample Java programs that explore features introduced i
   - {@code strip()}, {@code stripLeading()}, {@code stripTrailing()}: Remove whitespace (Unicode-aware) from both ends, the start, or the end of the string.
   - {@code repeat(int)}: Returns a new string consisting of the original repeated the specified number of times.
   - Example exercises: Checking for blank strings, splitting into lines, trimming with Unicode support, and repeating text for formatting or testing.
+
+- HTTP Client API (Java 11)  
+  Java 11 introduced the {@code java.net.http.HttpClient} class for making HTTP requests in a modern, easy-to-use, and highly configurable way:
+  - Supports both synchronous and asynchronous HTTP requests using a builder pattern and fluent API.
+  - Provides improved support for HTTP/1.1 and HTTP/2, timeouts, custom headers, and request/response bodies.
+  - Asynchronous operations use {@code CompletableFuture} for non-blocking, callback-driven workflows.
+  - Example exercises:  
+    • Performing GET requests synchronously and asynchronously  
+    • Using lambda callbacks to process HTTP responses  
+    • Demonstrating why blocking (e.g., {@code .join()}) is sometimes needed in console programs to ensure asynchronous operations complete.
 ## Upcoming Topics
 
 - And more...
