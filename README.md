@@ -63,7 +63,8 @@ You’ll find:
   - Concise, immutable data carrier classes with auto-generated accessors, equals, hashCode, and toString
 - Pattern Matching for instanceof (Java 16/17+)
   - Simplifies type checks and casts by combining them in a single, safe syntax
-
+- Sealed Classes (Java 15/17+)
+  - Restrict which classes can extend or implement a class/interface, enforcing closed hierarchies
 
 # Java8Plus
 
@@ -376,6 +377,15 @@ This repository contains sample Java programs that explore features introduced i
     • Comparing classic and pattern matching {@code instanceof} usage  
     • Pattern matching for multiple types in conditional logic
 
+- Sealed Classes (Java 15/17+)  
+  Java 15 introduced sealed classes (finalized in Java 17), allowing class designers to control which classes or interfaces can extend or implement them:
+  - Use the `sealed` modifier on a class or interface, and the `permits` clause to specify allowed subclasses or implementors.
+  - Subclasses must be explicitly marked as `final`, `sealed`, or `non-sealed`.
+  - Enforces closed class hierarchies, enabling safer, exhaustive pattern matching and easier maintenance.
+  - Example exercises:  
+    • Defining sealed hierarchies and permitted subclasses  
+    • Using final, sealed, and non-sealed subclasses  
+    • Leveraging sealed classes in pattern-matching switch expressions for exhaustive checks
 
 ## Upcoming Topics
 
