@@ -61,6 +61,9 @@ You’ll find:
   - Modern switch as an expression, arrow (`->`) syntax, yield, multiple labels
 - Records (Java 16+)
   - Concise, immutable data carrier classes with auto-generated accessors, equals, hashCode, and toString
+- Pattern Matching for instanceof (Java 16/17+)
+  - Simplifies type checks and casts by combining them in a single, safe syntax
+
 
 # Java8Plus
 
@@ -362,6 +365,17 @@ This repository contains sample Java programs that explore features introduced i
     • Defining and using records for concise data modeling  
     • Demonstrating immutability, equality, and auto-generated methods  
     • Adding custom methods and compact constructors for validation
+
+- Pattern Matching for instanceof (Java 16/17+)  
+  Java 16/17 introduced pattern matching for the {@code instanceof} operator, letting you combine type checking and casting into a single, concise syntax:
+  - Reduces boilerplate by eliminating the need for a separate cast after {@code instanceof}.
+  - Increases safety by limiting the variable’s scope to the block where the type check is true.
+  - Supports pattern variable introduction for clean and readable code.
+  - Example exercises:  
+    • Checking if an object is an instance of a type and immediately using it as that type  
+    • Comparing classic and pattern matching {@code instanceof} usage  
+    • Pattern matching for multiple types in conditional logic
+
 
 ## Upcoming Topics
 
