@@ -57,6 +57,10 @@ You’ll find:
   - Allows use of 'var' and annotations in lambda parameter lists
 - Text Blocks (Java 13/15+)
   - Multi-line string literals using triple double-quotes (""")
+- Switch Expressions (Java 14+)
+  - Modern switch as an expression, arrow (`->`) syntax, yield, multiple labels
+- Records (Java 16+)
+  - Concise, immutable data carrier classes with auto-generated accessors, equals, hashCode, and toString
 
 # Java8Plus
 
@@ -338,6 +342,26 @@ This repository contains sample Java programs that explore features introduced i
   - Removes the need for excessive escaping and awkward string concatenation.
   - Preserves line breaks, indentation, and allows embedded quotes without special escaping.
   - Example exercises: formatting JSON, SQL, and HTML snippets; demonstrating preservation of whitespace and line structure; comparing classic string literals with text blocks.
+
+
+- Switch Expressions (Java 14+)  
+  Java 14 introduced switch expressions, allowing switch to be used as both a statement and an expression:
+  - Supports returning a value directly from switch with the `->` syntax and multiple case labels separated by commas.
+  - No fall-through by default; no need for explicit break statements.
+  - Use of `yield` in a block to provide a value from a multi-statement case.
+  - Cleaner and safer for pattern-based logic, especially with enums and strings.
+  - Example exercises: assigning results from switch expressions, using yield for multi-line cases, comparing classic and new switch syntax.
+
+
+- Records (Java 16+)  
+  Java 16 introduced records, a special class type designed to serve as transparent, immutable data carriers with a compact syntax:
+  - Records automatically generate final fields, a canonical constructor, accessors (getters), `equals()`, `hashCode()`, and `toString()`.
+  - Ideal for DTOs and value objects—records are always immutable, and cannot declare mutable instance fields.
+  - Supports custom methods and custom constructors for validation or computed properties.
+  - Example exercises:  
+    • Defining and using records for concise data modeling  
+    • Demonstrating immutability, equality, and auto-generated methods  
+    • Adding custom methods and compact constructors for validation
 
 ## Upcoming Topics
 
