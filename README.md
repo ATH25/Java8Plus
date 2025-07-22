@@ -65,6 +65,9 @@ You’ll find:
   - Simplifies type checks and casts by combining them in a single, safe syntax
 - Sealed Classes (Java 15/17+)
   - Restrict which classes can extend or implement a class/interface, enforcing closed hierarchies
+- Pattern Matching for switch (Java 17/21+)
+  - Use patterns and type matching directly in switch cases, supporting records, sealed hierarchies, enums, and classic classes
+
 
 # Java8Plus
 
@@ -386,6 +389,17 @@ This repository contains sample Java programs that explore features introduced i
     • Defining sealed hierarchies and permitted subclasses  
     • Using final, sealed, and non-sealed subclasses  
     • Leveraging sealed classes in pattern-matching switch expressions for exhaustive checks
+
+- Pattern Matching for switch (Java 17/21+)  
+  Java 17 (preview) and Java 21 (final) enable using type patterns and destructuring directly in switch cases:
+  - Supports type-checking and variable binding for records, enums, sealed types, and classic classes.
+  - Enables more concise, readable, and exhaustive switch logic.
+  - Facilitates nested and hierarchical patterns for complex data structures.
+  - Example exercises:  
+    • Switching on records and extracting fields directly  
+    • Switching on enums with pattern cases  
+    • Handling classic classes and sealed types with pattern-matching cases
+
 
 ## Upcoming Topics
 
