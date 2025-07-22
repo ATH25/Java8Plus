@@ -390,15 +390,18 @@ This repository contains sample Java programs that explore features introduced i
     • Using final, sealed, and non-sealed subclasses  
     • Leveraging sealed classes in pattern-matching switch expressions for exhaustive checks
 
-- Pattern Matching for switch (Java 17/21+)  
+- Pattern Matching for switch (Java 17/21+)
   Java 17 (preview) and Java 21 (final) enable using type patterns and destructuring directly in switch cases:
   - Supports type-checking and variable binding for records, enums, sealed types, and classic classes.
   - Enables more concise, readable, and exhaustive switch logic.
   - Facilitates nested and hierarchical patterns for complex data structures.
-  - Example exercises:  
-    • Switching on records and extracting fields directly  
-    • Switching on enums with pattern cases  
-    • Handling classic classes and sealed types with pattern-matching cases
+  - Example exercises:
+
+    * Switching on records and extracting fields directly (`PatternMatchingSwitchDemo.java`)
+    * Nested patterns: matching and destructuring nested records and groups (`PatternMatchingSwitchNestedDemo.java`)
+    * Switching on enums with modern arrow syntax and pattern cases (`PatternMatchingSwitchEnumDemo.java`)
+    * Handling classic classes and sealed types with pattern-matching cases (`PatternMatchingSwitchClassicDemo.java`)
+  - Best practices: Place more specific patterns before general ones for clarity and exhaustiveness; use sealed hierarchies and records to enable exhaustive pattern matching.
 
 
 ## Upcoming Topics
