@@ -70,6 +70,10 @@ You’ll find:
   - Use patterns and type matching directly in switch cases, supporting records, sealed hierarchies, enums, and classic classes
   - Lightweight, scalable threads for modern high-concurrency Java applications
     - Comparing classic vs. virtual threads with join/state tracking
+- Sequenced Collections (Java 21)
+  - Unified interface additions for List, Set, and Map ordering
+  - Access to first/last elements and reversed views
+  - SequencedCollection, SequencedSet, and SequencedMap interfaces (Java 21)
 
 # Java8Plus
 
@@ -433,6 +437,20 @@ This repository contains sample Java programs that explore features introduced i
     | Use Case Suitability       | CPU-bound, low thread-count tasks | I/O-bound, high concurrency workloads |
     | API                        | `new Thread(...)`                 | `Thread.startVirtualThread(...)` or `Thread.ofVirtual().start(...)` |
 
+---
+
+- Sequenced Collections (Java 21) 
+  
+  Java 21 introduced `SequencedCollection`, `SequencedSet`, and `SequencedMap` interfaces to enhance and unify ordering behaviors across commonly used collections.
+
+- Key Features:
+  - `getFirst()` and `getLast()` allow direct access to the first and last elements.
+  - `reversed()` returns a reversed view of the collection or map.
+  - Available in ordered structures like `ArrayList`, `LinkedHashSet`, and `LinkedHashMap`.
+- Examples:
+  - `SequencedCollectionDemo.java`: Demonstrates first, last, and reversed behavior using `ArrayList`.
+  - `SequencedSetExample.java`: Shows insertion-order and sequencing using `LinkedHashSet`.
+  - `SequencedMapExample.java`: Demonstrates ordered key-value iteration using `LinkedHashMap` and `SequencedMap`.
 
 ## Upcoming Topics
 
