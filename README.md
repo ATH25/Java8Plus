@@ -74,6 +74,7 @@ You’ll find:
   - Unified interface additions for List, Set, and Map ordering
   - Access to first/last elements and reversed views
   - SequencedCollection, SequencedSet, and SequencedMap interfaces (Java 21)
+- Simple Web Server (Java 18)
 
 # Java8Plus
 
@@ -366,6 +367,19 @@ This repository contains sample Java programs that explore features introduced i
   - Example exercises: assigning results from switch expressions, using yield for multi-line cases, comparing classic and new switch syntax.
 
 
+- Simple Web Server (Java 18)
+  
+  Java 18 introduced a minimal HTTP file server via `SimpleFileServer`, enabling quick static file serving without external frameworks.
+
+  - **Primary use case**: Local development and testing.
+  - **Key API**: `SimpleFileServer.createFileHandler(Path root)`
+  - Automatically serves files like HTML, CSS, JS, and images from a specified directory.
+  - Should not be used in production due to lack of security and scalability.
+  - Works by launching a lightweight HTTP server on a given port and serving files from a folder relative to the working directory.
+
+**Example:** `SimpleWebServerDemo.java`  
+This demo serves static content from the `public/` folder. Open `http://localhost:8080` after running the program.
+
 - Records (Java 16+)  
   Java 16 introduced records, a special class type designed to serve as transparent, immutable data carriers with a compact syntax:
   - Records automatically generate final fields, a canonical constructor, accessors (getters), `equals()`, `hashCode()`, and `toString()`.
@@ -452,6 +466,4 @@ This repository contains sample Java programs that explore features introduced i
   - `SequencedSetExample.java`: Shows insertion-order and sequencing using `LinkedHashSet`.
   - `SequencedMapExample.java`: Demonstrates ordered key-value iteration using `LinkedHashMap` and `SequencedMap`.
 
-## Upcoming Topics
 
-- And more...
