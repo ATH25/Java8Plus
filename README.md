@@ -66,9 +66,10 @@ You’ll find:
 - Sealed Classes (Java 15/17+)
   - Restrict which classes can extend or implement a class/interface, enforcing closed hierarchies
 - Pattern Matching for switch (Java 17/21+)
+  - Exhaustive and nested switch patterns on records, enums, and classic types
   - Use patterns and type matching directly in switch cases, supporting records, sealed hierarchies, enums, and classic classes
-- Virtual Threads (Java 21+)
   - Lightweight, scalable threads for modern high-concurrency Java applications
+    - Comparing classic vs. virtual threads with join/state tracking
 
 # Java8Plus
 
@@ -391,6 +392,7 @@ This repository contains sample Java programs that explore features introduced i
     • Using final, sealed, and non-sealed subclasses  
     • Leveraging sealed classes in pattern-matching switch expressions for exhaustive checks
 
+
 - Pattern Matching for switch (Java 17/21+)
   Java 17 (preview) and Java 21 (final) enable using type patterns and destructuring directly in switch cases:
   - Supports type-checking and variable binding for records, enums, sealed types, and classic classes.
@@ -407,15 +409,30 @@ This repository contains sample Java programs that explore features introduced i
 - Virtual Threads (Java 21+)
   Java 21 introduced virtual threads, a groundbreaking feature for concurrency:
   - Virtual threads are lightweight threads managed by the JVM, not directly tied to operating system threads.
-  - Enable the creation of millions of concurrent threads for tasks like web requests, I/O, and background jobs—no more “thread pool” bottlenecks.
-  - Dramatically simplify scalable, maintainable concurrent programming: use `Thread.startVirtualThread()` for per-task threading with almost no overhead.
+  - Enable the creation of millions of concurrent threads for tasks like web requests, I/O, and background jobs—eliminating traditional “thread pool” bottlenecks.
+  - Dramatically simplify scalable, maintainable concurrent programming by enabling per-task thread creation with almost no overhead.
   - Seamless migration: Virtual threads use the standard Java `Thread` API, so existing code can be updated with minimal changes.
   - Example exercises:
-
     * Launching multiple virtual threads for concurrent processing (`VirtualThreadsDemo.java`)
-    * Comparing classic platform threads and virtual threads
-    * Handling task results and exceptions in virtual threads
-  - Best practices: Use virtual threads for high-concurrency, I/O-heavy workloads; minimize shared mutable state for best scalability.
+    * Comparing classic platform threads and virtual threads (`ThreadComparisonDemo.java`)
+    * Managing thread lifecycle with join() and state inspection (`ThreadJoinAndStatusDemo.java`)
+    * Handling task results and exceptions in virtual threads (upcoming)
+  - Best practices:
+    * Use virtual threads for high-concurrency, I/O-bound workloads.
+    * Prefer thread-per-task style for simplicity; avoid excessive thread-local state.
+    * Name your virtual threads explicitly when needed using `Thread.ofVirtual().name(...)` for easier debugging.
+  - Comparison: Platform vs. Virtual Threads
+
+    | Feature                     | Platform Thread                   | Virtual Thread                        |
+    |----------------------------|-----------------------------------|---------------------------------------|
+    | Backed By                  | OS thread                         | JVM-managed lightweight thread        |
+    | Memory & Resource Overhead | High                              | Very Low                              |
+    | Creation Cost              | Expensive                         | Cheap (millions possible)             |
+    | Scheduling                 | OS scheduler                      | Java Scheduler (continuation-based)   |
+    | Blocking Calls             | Blocks kernel thread              | Does not block carrier thread         |
+    | Use Case Suitability       | CPU-bound, low thread-count tasks | I/O-bound, high concurrency workloads |
+    | API                        | `new Thread(...)`                 | `Thread.startVirtualThread(...)` or `Thread.ofVirtual().start(...)` |
+
 
 ## Upcoming Topics
 
