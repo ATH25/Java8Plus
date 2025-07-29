@@ -75,6 +75,7 @@ You’ll find:
   - Access to first/last elements and reversed views
   - SequencedCollection, SequencedSet, and SequencedMap interfaces (Java 21)
 - Simple Web Server (Java 18)
+- Java Flight Recorder (JFR) — Event-based profiling tool to analyze thread behavior, memory, and CPU usage; tested with virtual threads and analyzed via IntelliJ's built-in JFR viewer.
 
 # Java8Plus
 
@@ -377,6 +378,26 @@ This repository contains sample Java programs that explore features introduced i
   - Should not be used in production due to lack of security and scalability.
   - Works by launching a lightweight HTTP server on a given port and serving files from a folder relative to the working directory.
 
+
+  - Java Flight Recorder (JFR)
+  
+    Java Flight Recorder is a low-overhead event-based profiling tool integrated into the JVM. It allows developers to collect diagnostic and profiling data about a running Java application with minimal performance impact.
+
+  - **Key Use Case**: Monitoring thread behavior (especially Virtual Threads), memory usage, CPU time, garbage collection, etc.
+  - **How We Used It**:
+    - Enabled JFR for 10 seconds using the `java` CLI with:
+      ```bash
+      java -XX:StartFlightRecording=filename=recording.jfr,duration=10s,settings=profile \
+           -cp out/production/Java8Plus modernfeatures.java18.VirtualThreadsDemo
+      ```
+    - The `VirtualThreadsDemo` created multiple virtual threads to simulate concurrent workloads.
+    - Recording was opened in IntelliJ Ultimate’s JFR viewer for analysis.
+  - **JFR Viewer in IntelliJ**:
+    - Timeline, Event Types, and Method profiling tabs allow in-depth inspection.
+    - Easily identifies blocked threads, thread states, and memory allocation patterns.
+
+  This gives us insight into the runtime behavior of modern concurrency features introduced in Java 21 and beyond.
+  
 **Example:** `SimpleWebServerDemo.java`  
 This demo serves static content from the `public/` folder. Open `http://localhost:8080` after running the program.
 
