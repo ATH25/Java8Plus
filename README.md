@@ -1,3 +1,4 @@
+
 # Java8Plus
 
 This repository contains sample Java programs that demonstrate and explain key features introduced in Java 8 and newer versions.  
@@ -487,4 +488,5 @@ This demo serves static content from the `public/` folder. Open `http://localhos
   - `SequencedSetExample.java`: Shows insertion-order and sequencing using `LinkedHashSet`.
   - `SequencedMapExample.java`: Demonstrates ordered key-value iteration using `LinkedHashMap` and `SequencedMap`.
 
-
+## JavaDoc
+[![GitHub Pages](https://img.shields.io/badge/docs-live-green)](https://ath25.github.io/java8plus-docs/docs/index.html)
